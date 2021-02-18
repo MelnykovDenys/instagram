@@ -1,0 +1,21 @@
+
+
+target 'Instagram' do
+  use_frameworks!
+
+  pod 'SnapKit'
+  pod 'R.swift'
+  pod 'Moya/RxSwift'
+  pod 'Atributika'
+  pod 'Kingfisher'
+  
+  target 'InstagramTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'InstagramUITests' do
+    # Pods for testing
+  end
+
+end

@@ -40,10 +40,10 @@ extension HomeViewController: UITableViewDataSource {
         ImageLoader.shared.downloadImage(with: post.iconURL) { profileImage in
             cell.configure(post: post, profileImage: profileImage)
             self.viewModel.collectionViewDataSource = post.photosURL
-
+            cell.collectionView.delegate = self
+            cell.collectionView.dataSource = self
         }
-        cell.collectionView.delegate = self
-        cell.collectionView.dataSource = self
+        
         return cell
     }
 }
