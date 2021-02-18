@@ -8,7 +8,7 @@
 import Kingfisher
 
 class ImageLoader {
-    //Don`t need set Queue couse
+    
     static let shared = ImageLoader()
     
     func downloadImage(with urlString: String, completionHandler: @escaping (UIImage?) -> ()) {
@@ -16,6 +16,7 @@ class ImageLoader {
             completionHandler(Images.imagePlaceholder())
             return
         }
+        //Don`t need set Queue cause pod does it
         ImageDownloader.default.downloadImage(with: url) { result in
             switch result {
             case .success(let result):

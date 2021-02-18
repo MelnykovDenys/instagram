@@ -11,7 +11,7 @@ import RxSwift
 
 protocol HomeViewModelDelegate: class {
     func postsDidFetchSuccess()
-    func postsDidFetchFail()
+    func postsDidFetchFail(with error: String)
 }
 
 class HomeViewModel {
@@ -19,11 +19,9 @@ class HomeViewModel {
     private let provider = OnlineProvider<PostAPI>()
     private let disposeBag = DisposeBag()
     
-    weak var delegate: HomeViewModelDelegate?
-    
-    var collectionViewDataSource = [PhotoURL]()
-    
     private(set) var posts = [Post]()
+
+    weak var delegate: HomeViewModelDelegate?
     
     func getPosts() {
         provider.rx.request(.getPosts)
@@ -31,9 +29,8 @@ class HomeViewModel {
             .subscribe { [weak self] posts in
                 self?.posts = posts
                 self?.delegate?.postsDidFetchSuccess()
-            } onError: { [weak self] _ in
-                self?.delegate?.postsDidFetchFail()
+            } onError: { [weak self] error in
+                self?.delegate?.postsDidFetchFail(with: error.localizedDescription)
             }.disposed(by: disposeBag)
-
     }
 }

@@ -29,6 +29,7 @@ final class HomeViewCollectionViewCell: UICollectionViewCell {
     
     private func setupLayout() {
         imageView.contentMode = .scaleAspectFill
+        imageView.image = Images.imagePlaceholder()
         contentView.addSubview(imageView)
         imageView.snp.makeConstraints {
             $0.edges.equalToSuperview()

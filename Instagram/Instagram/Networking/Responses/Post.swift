@@ -15,6 +15,7 @@ struct Post: Decodable {
     let likedCount: Int
     let description: String
     let photosURL: [PhotoURL]
+    let hours: String
     
     enum CodingKeys: String, CodingKey {
         case name = "user_name"
@@ -24,6 +25,7 @@ struct Post: Decodable {
         case likedCount = "liked_count"
         case description
         case photosURL = "photos_url"
+        case hours
     }
     
     var count: Int {
