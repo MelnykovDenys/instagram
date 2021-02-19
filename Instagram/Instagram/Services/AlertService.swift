@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlertService {
+final class AlertService {
     
     static let shared = AlertService()
     

@@ -11,6 +11,16 @@ final class HomeViewTableViewCell: UITableViewCell {
     
     static let identifier = String(describing: HomeViewTableViewCell.self)
     
+    private let profileIconImageView = UIImageView()
+    private let nameLabel = UILabel()
+    private let locationLabel = UILabel()
+    private let likedLabel = UILabel()
+    private let descriptionLabel = UILabel()
+    private let hoursLabel = UILabel()
+    private let pageControl = UIPageControl()
+    
+    private var photosURL = [String]()
+    
     private lazy var collectionView: UICollectionView = {
         let configuredCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         let layout = UICollectionViewFlowLayout()
@@ -25,16 +35,6 @@ final class HomeViewTableViewCell: UITableViewCell {
         configuredCollectionView.dataSource = self
         return configuredCollectionView
     }()
-    
-    private let profileIconImageView = UIImageView()
-    private let nameLabel = UILabel()
-    private let locationLabel = UILabel()
-    private let likedLabel = UILabel()
-    private let descriptionLabel = UILabel()
-    private let hoursLabel = UILabel()
-    private let pageControl = UIPageControl()
-    
-    private(set) var photosURL = [PhotoURL]()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -157,7 +157,8 @@ final class HomeViewTableViewCell: UITableViewCell {
         locationLabel.text = post.location
         likedLabel.attributedText = Localizable.likedBy(post.likedPersonList(), String(post.likedCount)).detectAttributes()
         descriptionLabel.attributedText = Localizable.profileComment(post.name, post.description).detectAttributes()
-        pageControl.numberOfPages = post.numberOfPage
+        pageControl.isHidden = post.isHiddenPageControl
+        pageControl.numberOfPages = post.photosURL.count
         hoursLabel.text = post.hours
         
         ImageLoader.shared.downloadImage(with: post.iconURL) { profileImage in
@@ -177,12 +178,13 @@ extension HomeViewTableViewCell: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeViewCollectionViewCell.identifier, for: indexPath) as? HomeViewCollectionViewCell else {
             return UICollectionViewCell()
         }
-        ImageLoader.shared.downloadImage(with: photosURL[indexPath.row].photo) { photo in
+        ImageLoader.shared.downloadImage(with: photosURL[indexPath.row]) { photo in
             cell.configure(image: photo)
         }
         return cell
     }
     
+// MARK: - PageControl detect
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         guard scrollView == collectionView else { return }
         pageControl.currentPage = Int(targetContentOffset.pointee.x / frame.width)

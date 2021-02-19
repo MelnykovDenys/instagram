@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     private let contentView = HomeView()
     private let viewModel = HomeViewModel()
@@ -26,6 +26,14 @@ class HomeViewController: UIViewController {
     
     private func setupNavigationBar() {
         self.navigationItem.titleView = UIImageView(image: R.image.logo())
+        
+        let leftBarButton = UIBarButtonItem()
+        leftBarButton.instaBarButton(with: Images.cameraIcon())
+        navigationItem.leftBarButtonItem = leftBarButton
+        
+        let rightBarButton = UIBarButtonItem()
+        rightBarButton.instaBarButton(with: Images.mailIcon())
+        navigationItem.rightBarButtonItem = rightBarButton
     }
     
     private func getPosts() {

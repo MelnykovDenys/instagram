@@ -7,7 +7,7 @@
 
 import Kingfisher
 
-class ImageLoader {
+final class ImageLoader {
     
     static let shared = ImageLoader()
     

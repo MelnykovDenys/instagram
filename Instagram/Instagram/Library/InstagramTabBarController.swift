@@ -34,14 +34,8 @@ enum TabItem: Int, CaseIterable {
         switch self {
         case .home:
             return HomeViewController.self
-        case .search:
-            return SearchViewController.self
-        case .addPhoto:
-            return SelfieViewController.self
-        case .likes:
-            return WhatsNewViewController.self
-        case .myProfile:
-            return MyProfileViewController.self
+        default:
+            return UIViewController.self
         }
     }
     
@@ -52,7 +46,6 @@ enum TabItem: Int, CaseIterable {
             controller = UINavigationController(rootViewController: viewController)
             controller.delegate = controller as? UINavigationControllerDelegate
         }
-        controller.interactivePopGestureRecognizer?.delegate = nil
         return controller
     }
 }
@@ -77,7 +70,6 @@ final class InstagramTabBarController: UITabBarController {
     
     private func setupTabBar() {
         tabBar.tintColor = Colors.black()
-        tabBar.isTranslucent = true
         setupViewControllers()
     }
     

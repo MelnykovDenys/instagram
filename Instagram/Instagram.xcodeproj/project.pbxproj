@@ -7,18 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0403FC0625DF348900A2A175 /* UIBarButtonItem+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403FC0525DF348800A2A175 /* UIBarButtonItem+Ext.swift */; };
 		0411F27825DDD693007A15A8 /* SFUIText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04581D2225DDD37F000B4B81 /* SFUIText-Medium.ttf */; };
 		0411F27925DDD693007A15A8 /* SFUIText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04581D2825DDD380000B4B81 /* SFUIText-Regular.ttf */; };
 		0411F27E25DDDCDE007A15A8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0411F27D25DDDCDE007A15A8 /* ImageLoader.swift */; };
-		0416A30A25DDB3EE0002E477 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A30925DDB3EE0002E477 /* SearchViewController.swift */; };
-		0416A30F25DDB4040002E477 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A30E25DDB4040002E477 /* SelfieViewController.swift */; };
-		0416A31425DDB42B0002E477 /* WhatsNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A31325DDB42B0002E477 /* WhatsNewViewController.swift */; };
-		0416A31925DDB43A0002E477 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A31825DDB43A0002E477 /* MyProfileViewController.swift */; };
 		0416A34125DDB4CC0002E477 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0416A34025DDB4CC0002E477 /* Colors.xcassets */; };
 		0416A3B225DDC14C0002E477 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A3B125DDC14C0002E477 /* Post.swift */; };
 		0416A3C525DDC2D10002E477 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A3C425DDC2D10002E477 /* Person.swift */; };
-		0416A3CA25DDC2DF0002E477 /* PhotoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A3C925DDC2DF0002E477 /* PhotoURL.swift */; };
-		0416A3CF25DDC3F90002E477 /* OnlineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A3CE25DDC3F90002E477 /* OnlineProvider.swift */; };
 		0416A3E025DDC4A10002E477 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A3DF25DDC4A10002E477 /* PostAPI.swift */; };
 		041C4AE925DECD7B009B15AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C4AE825DECD7B009B15AD /* SceneDelegate.swift */; };
 		041C4AF225DED742009B15AD /* HomeViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C4AF125DED742009B15AD /* HomeViewCollectionViewCell.swift */; };
@@ -60,16 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0403FC0525DF348800A2A175 /* UIBarButtonItem+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Ext.swift"; sourceTree = "<group>"; };
 		0411F27D25DDDCDE007A15A8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		0416A30925DDB3EE0002E477 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		0416A30E25DDB4040002E477 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
-		0416A31325DDB42B0002E477 /* WhatsNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewViewController.swift; sourceTree = "<group>"; };
-		0416A31825DDB43A0002E477 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		0416A34025DDB4CC0002E477 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0416A3B125DDC14C0002E477 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0416A3C425DDC2D10002E477 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		0416A3C925DDC2DF0002E477 /* PhotoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoURL.swift; sourceTree = "<group>"; };
-		0416A3CE25DDC3F90002E477 /* OnlineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineProvider.swift; sourceTree = "<group>"; };
 		0416A3DF25DDC4A10002E477 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		041C4AE825DECD7B009B15AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = /Users/mac/Development/instagram/Instagram/Instagram/SceneDelegate.swift; sourceTree = "<absolute>"; };
 		041C4AF125DED742009B15AD /* HomeViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -152,43 +142,10 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		0416A3A425DDB9350002E477 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				0416A30925DDB3EE0002E477 /* SearchViewController.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		0416A3AB25DDB9530002E477 /* Selfie */ = {
-			isa = PBXGroup;
-			children = (
-				0416A30E25DDB4040002E477 /* SelfieViewController.swift */,
-			);
-			path = Selfie;
-			sourceTree = "<group>";
-		};
-		0416A3AF25DDB95F0002E477 /* WhatsNew */ = {
-			isa = PBXGroup;
-			children = (
-				0416A31325DDB42B0002E477 /* WhatsNewViewController.swift */,
-			);
-			path = WhatsNew;
-			sourceTree = "<group>";
-		};
-		0416A3B025DDB96D0002E477 /* MyProfile */ = {
-			isa = PBXGroup;
-			children = (
-				0416A31825DDB43A0002E477 /* MyProfileViewController.swift */,
-			);
-			path = MyProfile;
-			sourceTree = "<group>";
-		};
 		0416A3B925DDC1500002E477 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				0416A3E425DDC4A60002E477 /* API */,
-				0416A3DB25DDC4750002E477 /* Provider */,
 				0416A3BD25DDC15A0002E477 /* Responses */,
 			);
 			path = Networking;
@@ -198,18 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				0416A3B125DDC14C0002E477 /* Post.swift */,
-				0416A3C925DDC2DF0002E477 /* PhotoURL.swift */,
 				0416A3C425DDC2D10002E477 /* Person.swift */,
 			);
 			path = Responses;
-			sourceTree = "<group>";
-		};
-		0416A3DB25DDC4750002E477 /* Provider */ = {
-			isa = PBXGroup;
-			children = (
-				0416A3CE25DDC3F90002E477 /* OnlineProvider.swift */,
-			);
-			path = Provider;
 			sourceTree = "<group>";
 		};
 		0416A3E425DDC4A60002E477 /* API */ = {
@@ -233,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				04581D0A25DDD20D000B4B81 /* String+Ext.swift */,
+				0403FC0525DF348800A2A175 /* UIBarButtonItem+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				04920ED325DD86FD00619236 /* Instagram */,
-				0411F28225DDDCE4007A15A8 /* Services */,
 				04920EEA25DD870200619236 /* InstagramTests */,
 				04920EF525DD870200619236 /* InstagramUITests */,
 				04920ED225DD86FD00619236 /* Products */,
@@ -289,6 +237,7 @@
 				041C4AE825DECD7B009B15AD /* SceneDelegate.swift */,
 				04920EE225DD870100619236 /* Info.plist */,
 				0416A3B925DDC1500002E477 /* Networking */,
+				0411F28225DDDCE4007A15A8 /* Services */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -314,10 +263,6 @@
 		04920F2C25DD8CBC00619236 /* UserStory */ = {
 			isa = PBXGroup;
 			children = (
-				0416A3B025DDB96D0002E477 /* MyProfile */,
-				0416A3AF25DDB95F0002E477 /* WhatsNew */,
-				0416A3AB25DDB9530002E477 /* Selfie */,
-				0416A3A425DDB9350002E477 /* Search */,
 				04920F3025DD8CE500619236 /* Home */,
 			);
 			path = UserStory;
@@ -667,23 +612,18 @@
 				04920F3A25DD8D0000619236 /* HomeView.swift in Sources */,
 				04920ED925DD86FD00619236 /* HomeViewController.swift in Sources */,
 				04920ED525DD86FD00619236 /* AppDelegate.swift in Sources */,
-				0416A30A25DDB3EE0002E477 /* SearchViewController.swift in Sources */,
 				0416A3C525DDC2D10002E477 /* Person.swift in Sources */,
 				0416A3B225DDC14C0002E477 /* Post.swift in Sources */,
 				041C4AF225DED742009B15AD /* HomeViewCollectionViewCell.swift in Sources */,
+				0403FC0625DF348900A2A175 /* UIBarButtonItem+Ext.swift in Sources */,
 				04920FA925DD97E600619236 /* R.generated.swift in Sources */,
-				0416A31925DDB43A0002E477 /* MyProfileViewController.swift in Sources */,
 				041C4AE925DECD7B009B15AD /* SceneDelegate.swift in Sources */,
 				04581D0B25DDD20D000B4B81 /* String+Ext.swift in Sources */,
 				0411F27E25DDDCDE007A15A8 /* ImageLoader.swift in Sources */,
 				04920F3525DD8CF700619236 /* HomeViewModel.swift in Sources */,
-				0416A3CA25DDC2DF0002E477 /* PhotoURL.swift in Sources */,
 				044BE40F25DDC7A900CEF97C /* Constant.swift in Sources */,
-				0416A31425DDB42B0002E477 /* WhatsNewViewController.swift in Sources */,
 				0416A3E025DDC4A10002E477 /* PostAPI.swift in Sources */,
 				04920F4225DD8DE600619236 /* InstagramTabBarController.swift in Sources */,
-				0416A30F25DDB4040002E477 /* SelfieViewController.swift in Sources */,
-				0416A3CF25DDC3F90002E477 /* OnlineProvider.swift in Sources */,
 				044BE41825DDCEBA00CEF97C /* HomeViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,4 +1,4 @@
 
-"liked-by" = "Liked by <bold>%@</bold>and <bold>%@ other</bold>";
+"liked-by" = "Liked by <bold>%@</bold> and <bold>%@ other</bold>";
 "error" = "Error";
 "profile-comment" = "<bold>%@</bold> %@";

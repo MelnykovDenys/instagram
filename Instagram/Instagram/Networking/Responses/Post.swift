@@ -14,7 +14,7 @@ struct Post: Decodable {
     let likedPersons: [Person]
     let likedCount: Int
     let description: String
-    let photosURL: [PhotoURL]
+    let photosURL: [String]
     let hours: String
     
     enum CodingKeys: String, CodingKey {
@@ -28,22 +28,15 @@ struct Post: Decodable {
         case hours
     }
     
-    var count: Int {
+    var photosCount: Int {
         return photosURL.count
     }
     
-    var numberOfPage: Int {
-        guard photosURL.count > 1 else {
-            return 0
-        }
-        return photosURL.count
+    var isHiddenPageControl: Bool {
+        return photosCount < 2
     }
     
     func likedPersonList() -> String {
-        var text = ""
-        likedPersons.forEach { person in
-            text += person.name + ", "
-        }
-        return text
+        return likedPersons.map { $0.name }.joined(separator: ", ")
     }
 }

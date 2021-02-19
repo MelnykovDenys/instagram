@@ -5,9 +5,8 @@
 //  Created by Denys Melnykov on 17.02.2021.
 //
 
-import Foundation
-import UIKit
 import RxSwift
+import Moya
 
 protocol HomeViewModelDelegate: class {
     func postsDidFetchSuccess()
@@ -16,7 +15,7 @@ protocol HomeViewModelDelegate: class {
 
 class HomeViewModel {
     
-    private let provider = OnlineProvider<PostAPI>()
+    private let provider = MoyaProvider<PostAPI>()
     private let disposeBag = DisposeBag()
     
     private(set) var posts = [Post]()
