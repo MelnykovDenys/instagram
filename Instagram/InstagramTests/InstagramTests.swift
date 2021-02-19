@@ -10,7 +10,7 @@ import UIKit
 @testable import Instagram
 
 class InstagramUITests: XCTestCase {
-    //MARK: Sistem Under Test
+    //MARK: System Under Test
     
     var sut: HomeViewController!
     
@@ -31,7 +31,7 @@ class InstagramUITests: XCTestCase {
     
     func test_template() {
         //MARK: Given
-        //MARK: When(what's happend)
+        //MARK: When(what's happened)
         //MARK: Then(result)
     }
 }
