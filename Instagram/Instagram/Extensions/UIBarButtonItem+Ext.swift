@@ -9,8 +9,10 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    func instaBarButton(with icon: UIImage?) {
-        tintColor = Colors.black()
-        image = icon
+    static func instaBarButton(with icon: UIImage?) -> UIBarButtonItem {
+        let barButtonItem = UIBarButtonItem()
+        barButtonItem.tintColor = Colors.black()
+        barButtonItem.image = icon
+        return barButtonItem
     }
 }

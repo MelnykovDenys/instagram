@@ -22,18 +22,20 @@ final class HomeViewTableViewCell: UITableViewCell {
     private var photosURL = [String]()
     
     private lazy var collectionView: UICollectionView = {
-        let configuredCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        configuredCollectionView.collectionViewLayout = layout
-        configuredCollectionView.showsHorizontalScrollIndicator = false
-        configuredCollectionView.isPagingEnabled = true
-        configuredCollectionView.bounces = false
-        configuredCollectionView.register(HomeViewCollectionViewCell.self, forCellWithReuseIdentifier: HomeViewCollectionViewCell.identifier)
-        configuredCollectionView.backgroundColor = .white
-        configuredCollectionView.delegate = self
-        configuredCollectionView.dataSource = self
-        return configuredCollectionView
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        collectionView.collectionViewLayout = layout
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
+        collectionView.bounces = false
+        collectionView.register(HomeViewCollectionViewCell.self, forCellWithReuseIdentifier: HomeViewCollectionViewCell.identifier)
+        collectionView.backgroundColor = .white
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        return collectionView
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -48,6 +50,7 @@ final class HomeViewTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         profileIconImageView.image = nil
+        photosURL = []
     }
     
     private func setupLayout() {
@@ -83,10 +86,10 @@ final class HomeViewTableViewCell: UITableViewCell {
             $0.height.equalToSuperview().multipliedBy(0.65)
         }
         
-        let healthButton = UIButton()
-        contentView.addSubview(healthButton)
-        healthButton.setImage(Images.heartIcon(), for: .normal)
-        healthButton.snp.makeConstraints {
+        let likeButton = UIButton()
+        contentView.addSubview(likeButton)
+        likeButton.setImage(Images.heartIcon(), for: .normal)
+        likeButton.snp.makeConstraints {
             $0.leading.equalTo(profileIconImageView)
             $0.top.equalTo(collectionView.snp.bottom).offset(15)
             $0.size.equalTo(30)
@@ -96,8 +99,8 @@ final class HomeViewTableViewCell: UITableViewCell {
         contentView.addSubview(commentsButton)
         commentsButton.setImage(Images.commentIcon(), for: .normal)
         commentsButton.snp.makeConstraints {
-            $0.leading.equalTo(healthButton.snp.trailing).offset(10)
-            $0.top.size.equalTo(healthButton)
+            $0.leading.equalTo(likeButton.snp.trailing).offset(10)
+            $0.top.size.equalTo(likeButton)
         }
         
         let mailButton = UIButton()
@@ -108,20 +111,22 @@ final class HomeViewTableViewCell: UITableViewCell {
             $0.size.top.equalTo(commentsButton)
         }
         
-        pageControl.pageIndicatorTintColor = Colors.lightGray()
-        pageControl.currentPageIndicatorTintColor = Colors.tagColor()
-        contentView.addSubview(pageControl)
-        pageControl.snp.makeConstraints {
-            $0.centerY.equalTo(mailButton)
-            $0.centerX.equalToSuperview()
-        }
-        
         let bookMarkButton = UIButton()
         bookMarkButton.setImage(Images.bookmarkIcon(), for: .normal)
         contentView.addSubview(bookMarkButton)
         bookMarkButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(15)
             $0.top.size.equalTo(mailButton)
+        }
+        
+        pageControl.pageIndicatorTintColor = Colors.lightGray()
+        pageControl.currentPageIndicatorTintColor = Colors.tagColor()
+        contentView.addSubview(pageControl)
+        pageControl.snp.makeConstraints {
+            $0.centerY.equalTo(mailButton)
+            $0.centerX.equalToSuperview()
+            $0.trailing.lessThanOrEqualTo(bookMarkButton.snp.leading)
+            $0.leading.lessThanOrEqualTo(mailButton.snp.trailing)
         }
         
         likedLabel.numberOfLines = 0
@@ -178,8 +183,8 @@ extension HomeViewTableViewCell: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeViewCollectionViewCell.identifier, for: indexPath) as? HomeViewCollectionViewCell else {
             return UICollectionViewCell()
         }
-        ImageLoader.shared.downloadImage(with: photosURL[indexPath.row]) { photo in
-            cell.configure(image: photo)
+        ImageLoader.shared.downloadImage(with: photosURL[indexPath.row]) {
+            cell.configure(image: $0)
         }
         return cell
     }

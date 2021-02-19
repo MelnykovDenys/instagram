@@ -34,6 +34,7 @@ final class HomeView: UIView {
         }
         
         activityIndicatorView.style = .large
+        activityIndicatorView.hidesWhenStopped = true
         addSubview(activityIndicatorView)
         activityIndicatorView.snp.makeConstraints {
             $0.center.equalToSuperview()

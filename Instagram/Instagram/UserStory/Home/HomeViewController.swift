@@ -17,23 +17,18 @@ final class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        viewModel.delegate = self
+        contentView.tableView.dataSource = self
         super.viewDidLoad()
         setupNavigationBar()
         getPosts()
-        viewModel.delegate = self
-        contentView.tableView.dataSource = self
+        
     }
     
     private func setupNavigationBar() {
         self.navigationItem.titleView = UIImageView(image: R.image.logo())
-        
-        let leftBarButton = UIBarButtonItem()
-        leftBarButton.instaBarButton(with: Images.cameraIcon())
-        navigationItem.leftBarButtonItem = leftBarButton
-        
-        let rightBarButton = UIBarButtonItem()
-        rightBarButton.instaBarButton(with: Images.mailIcon())
-        navigationItem.rightBarButtonItem = rightBarButton
+        navigationItem.leftBarButtonItem = UIBarButtonItem.instaBarButton(with: Images.cameraIcon())
+        navigationItem.rightBarButtonItem = UIBarButtonItem.instaBarButton(with: Images.mailIcon())
     }
     
     private func getPosts() {
