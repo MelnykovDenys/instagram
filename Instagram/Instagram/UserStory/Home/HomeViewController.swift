@@ -17,9 +17,9 @@ final class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         viewModel.delegate = self
         contentView.tableView.dataSource = self
-        super.viewDidLoad()
         setupNavigationBar()
         getPosts()
         

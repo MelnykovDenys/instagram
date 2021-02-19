@@ -17,6 +17,7 @@
 		0416A3E025DDC4A10002E477 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416A3DF25DDC4A10002E477 /* PostAPI.swift */; };
 		041C4AE925DECD7B009B15AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C4AE825DECD7B009B15AD /* SceneDelegate.swift */; };
 		041C4AF225DED742009B15AD /* HomeViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C4AF125DED742009B15AD /* HomeViewCollectionViewCell.swift */; };
+		041DD86B25DFAA9500747EF6 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DD86A25DFAA9500747EF6 /* HomeViewControllerTests.swift */; };
 		044BE40F25DDC7A900CEF97C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BE40E25DDC7A900CEF97C /* Constant.swift */; };
 		044BE41825DDCEBA00CEF97C /* HomeViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BE41725DDCEBA00CEF97C /* HomeViewTableViewCell.swift */; };
 		04581D0B25DDD20D000B4B81 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04581D0A25DDD20D000B4B81 /* String+Ext.swift */; };
@@ -63,6 +64,7 @@
 		0416A3DF25DDC4A10002E477 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		041C4AE825DECD7B009B15AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = /Users/mac/Development/instagram/Instagram/Instagram/SceneDelegate.swift; sourceTree = "<absolute>"; };
 		041C4AF125DED742009B15AD /* HomeViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		041DD86A25DFAA9500747EF6 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		044BE40E25DDC7A900CEF97C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		044BE41725DDCEBA00CEF97C /* HomeViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTableViewCell.swift; sourceTree = "<group>"; };
 		04581D0A25DDD20D000B4B81 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -168,6 +170,22 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		041DD86825DFAA5A00747EF6 /* UserStoryTest */ = {
+			isa = PBXGroup;
+			children = (
+				041DD86925DFAA7000747EF6 /* HomeTests */,
+			);
+			path = UserStoryTest;
+			sourceTree = "<group>";
+		};
+		041DD86925DFAA7000747EF6 /* HomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				041DD86A25DFAA9500747EF6 /* HomeViewControllerTests.swift */,
+			);
+			path = HomeTests;
+			sourceTree = "<group>";
+		};
 		044BE41C25DDCEBD00CEF97C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +263,7 @@
 		04920EEA25DD870200619236 /* InstagramTests */ = {
 			isa = PBXGroup;
 			children = (
+				041DD86825DFAA5A00747EF6 /* UserStoryTest */,
 				04920EEB25DD870200619236 /* InstagramTests.swift */,
 				04920EED25DD870200619236 /* Info.plist */,
 			);
@@ -633,6 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04920EEC25DD870200619236 /* InstagramTests.swift in Sources */,
+				041DD86B25DFAA9500747EF6 /* HomeViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +742,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -777,7 +797,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -838,7 +858,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFZCUGW9T6;
 				INFOPLIST_FILE = InstagramTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -861,7 +881,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JFZCUGW9T6;
 				INFOPLIST_FILE = InstagramTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
